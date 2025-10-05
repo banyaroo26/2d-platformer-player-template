@@ -1,0 +1,17 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1759689268
+::res://assets/::1759688961
+AnimationSheet_Character.png::CompressedTexture2D::4743098109480689131::1759579364::1759688959::1::::<><><>0<>0<>1ca36d05785f7670b448567852ba0636<>res://.godot/imported/AnimationSheet_Character.png-d3cbcbc2c20421fcc2b8127c3d88e754.ctex::
+icon.svg::CompressedTexture2D::1105275111750010345::1759509170::1759688961::1::::<><><>0<>0<>06608be54b825ab7ac170670926517b1<>res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex::
+::res://scenes/::1759689014
+player.tscn::PackedScene::4889847132781420847::1759689014::0::1::::<><><>0<>0<><>::uid://044sefce51hn::::res://scripts/Player.gd<>uid://b8tuerva2m66b::::res://assets/AnimationSheet_Character.png<>uid://dfmxe5u34a6yt::::res://scripts/player_fsm.gd<>uid://bww2cuj8i2wud::::res://scripts/player_idle.gd<>uid://sdwr5qnu0vn7::::res://scripts/player_walk.gd<>uid://br4ytq6l6w3kn::::res://scripts/player_jump.gd<>uid://ds0aybdsyntku::::res://scripts/player_fall.gd<>uid://c7oqcl4ijexbs::::res://scripts/player_attack.gd
+world.tscn::PackedScene::6634650899993592189::1759688961::0::1::::<><><>0<>0<><>::uid://cbwxckphrcsbf::::res://scenes/player.tscn<>uid://p0nyp4p24n82::::res://assets/icon.svg
+::res://scripts/::1759689014
+Player.gd::GDScript::1816381200813906963::1759678728::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+player_attack.gd::GDScript::7048761318764022400::1759687628::0::1::::PlayerAttack<>State<><>0<>0<><>::
+player_fall.gd::GDScript::8474313597477304348::1759686433::0::1::::PlayerFall<>State<><>0<>0<><>::
+player_fsm.gd::GDScript::7536384044235005583::1759677632::0::1::::FiniteStateMachine<>Node<><>0<>0<><>::
+player_idle.gd::GDScript::3977635550593022523::1759687092::0::1::::PlayerIdle<>State<><>0<>0<><>::
+player_jump.gd::GDScript::3640990007122625937::1759686391::0::1::::PlayerJump<>State<><>0<>0<><>::
+player_state.gd::GDScript::233143267646689498::1759670427::0::1::::State<>Node<><>0<>0<><>::
+player_walk.gd::GDScript::1270960052119777238::1759689014::0::1::::PlayerWalk<>State<><>0<>0<><>::
