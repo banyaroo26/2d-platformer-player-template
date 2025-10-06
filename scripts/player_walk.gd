@@ -26,12 +26,12 @@ func Physics_Update(_delta: float):
 		animation = "walk"
 		
 	if direction == 1:
-		animated_sprite.flip_h = !player.right_flipped
-		player.right_flipped = true
+		player.facing_right = true
+		animated_sprite.flip_h = false
 		animation_player.play(animation)
 	elif direction == -1:
-		animated_sprite.flip_h = player.right_flipped
-		player.right_flipped = true
+		player.facing_right = false
+		animated_sprite.flip_h = true
 		animation_player.play(animation)
 	else:
 		transition.emit(self, "player_idle")	

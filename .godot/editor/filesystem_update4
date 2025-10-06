@@ -1,0 +1,10 @@
+res://scenes/player.tscn
+res://scripts/Player.gd
+res://scenes/attack_area_2d.gd
+res://scenes/world.tscn
+res://scripts/attack_area_2d.gd
+res://scripts/player_walk.gd
+res://scripts/player_jump.gd
+res://scripts/player_fall.gd
+res://scripts/player_attack.gd
+res://scripts/player_double_jump.gd

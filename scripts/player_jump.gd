@@ -17,17 +17,21 @@ func Physics_Update(_delta: float):
 	var direction = Input.get_axis("left", "right")
 	
 	if direction == 1:
-		animated_sprite.flip_h = !player.right_flipped
-		player.right_flipped = true
+		player.facing_right = true
+		animated_sprite.flip_h = false
 	elif direction == -1:
-		animated_sprite.flip_h = player.right_flipped
-		player.right_flipped = true
+		player.facing_right = false
+		animated_sprite.flip_h = true
 		
 	player.velocity.x = direction * player.speed
 		
 	# If falls after jump peak
 	if player.velocity.y > 0 and animation_player.current_animation != "fall":
 		transition.emit(self, "player_fall")
+		
+	# If double jumps
+	if Input.is_action_just_pressed("jump"):
+		transition.emit(self, "player_double_jump")
 		
 func Exit():
 	pass

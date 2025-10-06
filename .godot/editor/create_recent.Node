@@ -1,10 +1,11 @@
+CollisionShape2D
+Sprite2D
+CharacterBody2D
+Area2D
 Node
 TextureButton
 AnimationTree
 AnimationPlayer
-Sprite2D
-CollisionShape2D
 CollisionPolygon2D
 AnimatedSprite2D
 StaticBody2D
-CharacterBody2D

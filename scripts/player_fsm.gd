@@ -23,10 +23,12 @@ func _physics_process(delta):
 
 func change_state(old_state: State, new_state_name: String):
 	if old_state != current_state:
+		print("there's something wrong in fsm")
 		return
 	
 	var new_state = states.get(new_state_name.to_lower())
 	if !new_state:
+		print("invalid state")
 		return
 		
 	if current_state:

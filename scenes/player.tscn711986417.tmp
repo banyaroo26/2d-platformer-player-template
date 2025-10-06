@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cbwxckphrcsbf"]
+[gd_scene load_steps=53 format=3 uid="uid://cbwxckphrcsbf"]
 
 [ext_resource type="Script" uid="uid://044sefce51hn" path="res://scripts/Player.gd" id="1_br03p"]
 [ext_resource type="Texture2D" uid="uid://b8tuerva2m66b" path="res://assets/AnimationSheet_Character.png" id="2_onrkg"]
@@ -8,8 +8,7 @@
 [ext_resource type="Script" uid="uid://br4ytq6l6w3kn" path="res://scripts/player_jump.gd" id="6_2hs0m"]
 [ext_resource type="Script" uid="uid://ds0aybdsyntku" path="res://scripts/player_fall.gd" id="7_1jxqw"]
 [ext_resource type="Script" uid="uid://c7oqcl4ijexbs" path="res://scripts/player_attack.gd" id="8_dw050"]
-[ext_resource type="Script" uid="uid://d2o3ot78pl50h" path="res://scripts/player_double_jump.gd" id="9_ur7pv"]
-[ext_resource type="Script" uid="uid://dflxkrjpbk7ha" path="res://scripts/attack_area_2d.gd" id="10_y4r1p"]
+[ext_resource type="Script" uid="uid://d2o3ot78pl50h" path="res://scenes/player_double_jump.gd" id="9_ur7pv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q13i1"]
 atlas = ExtResource("2_onrkg")
@@ -281,18 +280,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [1]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AttackArea2D:monitoring")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_2hs0m"]
 resource_name = "attack"
@@ -348,18 +335,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AttackArea2D:monitoring")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.04941749, 0.09959524, 0.149773, 0.19995075, 0.24936825, 0.30030626, 0.35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, true, true, true, false, false]
 }
 
 [sub_resource type="Animation" id="Animation_b26j0"]
@@ -516,9 +491,6 @@ _data = {
 &"walk": SubResource("Animation_hqtel")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur7pv"]
-size = Vector2(20, 64)
-
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(236, 301)
 script = ExtResource("1_br03p")
@@ -573,18 +545,5 @@ animation_player = NodePath("../../AnimationPlayer")
 player = NodePath("../..")
 animated_sprite = NodePath("../../AnimatedSprite2D")
 
-[node name="player_double_jump" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("animation_player", "player", "animated_sprite")]
+[node name="player_double_jump" type="Node" parent="FiniteStateMachine"]
 script = ExtResource("9_ur7pv")
-animation_player = NodePath("../../AnimationPlayer")
-player = NodePath("../..")
-animated_sprite = NodePath("../../AnimatedSprite2D")
-
-[node name="AttackArea2D" type="Area2D" parent="."]
-script = ExtResource("10_y4r1p")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D"]
-position = Vector2(31, 5)
-shape = SubResource("RectangleShape2D_ur7pv")
-
-[connection signal="body_entered" from="AttackArea2D" to="AttackArea2D" method="_on_body_entered"]
